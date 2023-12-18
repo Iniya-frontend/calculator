@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.0-dist - Copy/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+   <div class="container bg-secondary w-50 text-lg-center">
+    <div class="row">
+        <div class="col col-lg-12 col-md-11 offset-md-1 col-sm-12 col-xs-12 my-lg-3 mx-lg-3">
+            <input type="numbers" placeholder="ANSWER" readonly id="ans">
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-lg-3 ">
+            <input type="number" placeholder="value1" id="val1">
+            <input type="number" placeholder="value2" id="val2"required>
+        </div>
+    </div> <br>
+    <div class="row">
+        <div class="colcol-lg-12 col-md-12 col-sm-12 col-xs-12 mx-lg-3 ">
+            <select  id="sel" required>
+                <option>operators</option>
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+            <button onclick="cleardisplay()" id="clr">AC</button>
+        </div>
+    </div><br>
+    <div class="row text-center">
+        <div class="col col-lg-11 offset-lg-1 col-md-12 col-sm-12 col-xs-12 my-lg-3 mx-lg-5 ">
+            <button onclick="output()">Equal to</button>
+        </div>
+    </div>
+   </div>
+
+   <script>
+    
+    function output(){
+ var num1 = document.getElementById("val1").value;
+  var num2 = document.getElementById("val2").value;
+  var operators=document.getElementById("sel").value;
+ document.getElementById("ans").value;
+  if(operators=="+"){
+    result1=parseFloat(num1) + parseFloat(num2);
+    document.getElementById("ans").value=result1;
+    console.log(result1);
+  }
+  else if(operators=="-"){
+  result2=num1-num2;
+document.getElementById("ans").value=result2;
+    console.log(result2);
+  }
+  else if(operators=="*"){
+    result3=num1*num2;
+    document.getElementById("ans").value=result3;
+    console.log(result3);
+  }
+  else if (operators=="/"){
+    result4=num1/num2;
+    document.getElementById("ans").value=result4;
+    console.log(result4);
+  }
+  else{
+    console.log("wrong");
+  }
+  
+    }
+    
+    function cleardisplay(){
+var ac=document.getElementById("clr").value;
+if(ac==""){
+document.getElementById("ans").value="";
+document.getElementById("val1").value="";
+document.getElementById("val2").value="";
+document.getElementById("sel").value="operators";
+console.log("yes");
+}
+else{
+    console.log("noo");
+}
+    }
+
+   </script>
+</body>
+</html>
